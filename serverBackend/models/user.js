@@ -1,0 +1,15 @@
+// christopher Esguerra user.js
+
+import mongoose from 'mongoose';
+
+const UserSchema = new mongoose.Schema({
+  user: {
+    name: { type: String, required: true },
+    email: { type: String, required: true },
+    password: { type: String, required: true },
+    createdat: { type: Date, default: Date.now },
+    updateat: { type: Date, default: Date.now }
+  }
+});
+
+export default mongoose.model('users', UserSchema);
